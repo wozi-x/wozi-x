@@ -1,17 +1,26 @@
 # Mac setup
 
-Copy and run this on a new Mac:
+Public, standalone macOS setup lives in
+[wozi-x/PKGMacSetupPublic](https://github.com/wozi-x/PKGMacSetupPublic).
+
+Prepare a new Mac's controller prerequisites:
 
 ```sh
-curl -fsSL https://wozi-x.github.io/mac | /bin/bash -p
+curl -fsSL https://wozi-x.github.io/mac |
+  /bin/bash -p -s -- --prepare
 ```
 
-Run from Terminal using your administrator account, without adding `sudo` to
-the command. Enter your Mac login password when the installer asks for it.
+Then choose and preview a complete configuration:
 
-It installs or updates Homebrew, Chrome, 1Password, the ChatGPT desktop app with
-Codex, and GitHub CLI; authenticates GitHub; then clones or updates PKGMacSetup
-and starts standard setup. Standard setup does not request private SMB storage.
+```sh
+# Admin
+curl -fsSL https://wozi-x.github.io/mac |
+  /bin/bash -p -s -- --config examples/admin.yml --plan
 
-The public installer source is reviewed at
-[wozi-x/PKGMacSetupPublic](https://github.com/wozi-x/PKGMacSetupPublic).
+# iOS Dev (use examples/web-dev.yml for Web Dev)
+curl -fsSL https://wozi-x.github.io/mac |
+  /bin/bash -p -s -- --config examples/ios-dev.yml --plan
+```
+
+The public flow does not authenticate GitHub or retrieve private configuration.
+Review the repository README before replacing `--plan` with `--apply`.
