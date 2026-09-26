@@ -1,26 +1,21 @@
 # Mac setup
 
-Public, standalone macOS setup lives in
-[wozi-x/PKGMacSetupPublic](https://github.com/wozi-x/PKGMacSetupPublic).
-
-Prepare a new Mac's controller prerequisites:
+Copy and run this on a new Mac:
 
 ```sh
-curl -fsSL https://wozi-x.github.io/mac |
-  /bin/bash -p -s -- --prepare
+curl -fsSL https://wozi-x.github.io/mac | /bin/bash -p
 ```
 
-Then choose and preview a complete configuration:
+Run from Terminal using your administrator account, without adding `sudo` to
+the command. Enter your Mac login password when the installer asks for it.
 
-```sh
-# Admin
-curl -fsSL https://wozi-x.github.io/mac |
-  /bin/bash -p -s -- --config examples/admin.yml --plan
+The starter prepares Command Line Tools, Homebrew, and GitHub CLI, guides GitHub
+browser sign-in, then lets you choose:
 
-# iOS Dev (use examples/web-dev.yml for Web Dev)
-curl -fsSL https://wozi-x.github.io/mac |
-  /bin/bash -p -s -- --config examples/ios-dev.yml --plan
-```
+- **Base** — Raycast, Zed, shell tools, and selected macOS preferences.
+- **Dev** — the complete development setup; repository access is required.
+- **Admin** — the development setup with Admin additions; repository access is required.
 
-The public flow does not authenticate GitHub or retrieve private configuration.
-Review the repository README before replacing `--plan` with `--apply`.
+Base uses the [public setup](https://github.com/wozi-x/PKGMacSetupPublic) and can
+use a local configuration directory. Dev and Admin use the existing setup and
+defer App Store and private-storage stages.
