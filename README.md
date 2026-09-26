@@ -12,7 +12,7 @@ the command. Enter your Mac login password when the installer asks for it.
 The starter prepares Command Line Tools, Homebrew, and GitHub CLI, then lets you
 choose:
 
-- **Base** — Raycast, Zed, Amphetamine, shell tools, and selected macOS preferences.
+- **Base** — Raycast, Zed, Amphetamine, Oh My Zsh, shell tools, and selected macOS preferences.
 - **Dev** — the complete development setup; repository access is required.
 - **Admin** — the development setup with Admin additions; repository access is required.
 
